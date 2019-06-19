@@ -96,14 +96,14 @@ def options5():
         for i in range(num):
             val = str(round(random.uniform(l1, l2), 1))
             cur = cnxn.cursor()
-            c = "select count(*) from quake6 WHERE depthError =" + val +"and longitude = "+lon
+            c = "select count(*) from quake6 WHERE depthError =" + val
             # cur.execute("select * from all_month WHERE place LIKE ?", ('%'+loc+'%',))
             if r.get(c):
                 print('Cached')
                 rows.append(r.get(c))
             else:
                 print('Not Cached')
-                cur.execute("select count(*) from quake6 WHERE depthError =? and longitude = ?", (val,lon))
+                cur.execute("select count(*) from quake6 WHERE depthError =? ", (val))
                 get = cur.fetchall();
                 rows.append(get)
                 r.set(c, str(get))
@@ -143,13 +143,13 @@ def options6():
         start_time = time.time()
         val = str(round(random.uniform(l1, l2), 1))
         cur = cnxn.cursor()
-        c = "select count(*) from quake6 WHERE depthError =" + val +"and longitude = "+lon
+        c = "select count(*) from quake6 WHERE depthError =" + val
         if r.get(c):
             print('Cached')
             rows.append(r.get(c))
         else:
             print('Not Cached')
-            cur.execute("select count(*) from quake6 WHERE depthError =? and longitude=?", (val,lon))
+            cur.execute("select count(*) from quake6 WHERE depthError =? ", (val))
             get = cur.fetchall();
             rows.append(get)
             r.set(c, str(get))
