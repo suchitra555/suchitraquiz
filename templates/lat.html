@@ -4,32 +4,27 @@
 
 		<center>
 		<header> <h1> Records </h1> </header>
-      <header> <h1> This page lists the quake random records </h1>
+
+            <header> <h1> Quiz 3</h1> </header>
 		<br> <br>
 		<h1> </h1>
 		<br>
-		<label><h2>Enter the number of queries and :</h2></label><br>
-        <form action = "{{ url_for('options4') }}" method = "POST">
-		<label>Enter Depth error 1:</label>
-         <input type = "text"
-				 name = "val"
+		<label><h2>Display the no of records:</h2></label><br>
+        <form action = "{{ url_for('list1') }}" method = "POST">
+		  <label>Enter num  1:</label>
+          <input type = "text"
+				 name = "dep1"
                   />
-		<label>Enter depth error 2:</label>
-         <input type = "text"
-				 name = "val2"
+            <label>Enter num  2:</label>
+          <input type = "text"
+				 name = "dep2"
                   />
-            <label>Enter num:</label>
-         <input type = "text"
-				 name = "num"
-                  />
-            <label>Enter longitude:</label>
-         <input type = "text"
-				 name = "lon">
+
 		  <br>
 		  <br>
+
 		  <input type = "submit" value = "submit" /><br>
 		  </form>
         </center>
-
     </body>
 </html>
